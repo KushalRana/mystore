@@ -168,8 +168,8 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar_nav_compact_style": True,
     "sidebar_nav_legacy_style": False,
     "sidebar_nav_flat_style": False,
-    "theme": "superhero",
-    "dark_mode_theme": "slate",
+    "theme": "darkly",
+    "dark_mode_theme": "superhero",
     "button_classes": {
         "primary": "btn-primary",
         "secondary": "btn-secondary",
