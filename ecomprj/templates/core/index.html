@@ -2,65 +2,46 @@
 {% load static %}
 
 {% block content %}
-
   <!-- Body Content -->
   <div id="page-content">
-    <div class="section-header text-center">
-      <h2 class="h2">Shop By Type</h2>
-      <p>Shop specific type of clothings in one place</p>
-    </div>
-
-    <!-- Image Banners -->
-    <div class="section imgBanners">
-      <div class="imgBnrOuter">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
-              <div class="img-bnr">
-                <div class="inner center">
-                  <a href="#">
-                    <img data-src="{% static 'assets/images/collection/modern1.jpg' %}" src="{% static 'assets/images/collection/modern1.jpg' %}" alt="Cap" title="Cap" class="blur-up lazyload" />
-                    <span class="ttl">Cap</span>
-                  </a>
-                </div>
-              </div>
-              <div class="img-bnr">
-                <div class="inner center">
-                  <a href="#">
-                    <img data-src="{% static 'assets/images/collection/modern2.jpg' %}" src="{% static 'assets/images/collection/modern2.jpg' %}" alt="Sweaters" title="Sweaters" class="blur-up lazyload" />
-                    <span class="ttl">Sweaters</span>
-                  </a>
+    <!-- Home slider -->
+    <div class="slideshow slideshow-wrapper pb-section">
+      <div class="home-slideshow">
+        <div class="slide slideshow--medium">
+          <div class="blur-up lazyload">
+            <img class="blur-up lazyload" data-src="{% static 'assets/images/slideshow-banners/home12-category-banner1.jpg' %}" src="{% static 'assets/images/slideshow-banners/home12-category-banner1.jpg' %}" alt="Outfit of Today" title="Outfit of Today" />
+            <div class="slideshow__text-wrap slideshow__overlay classic middle">
+              <div class="slideshow__text-content classic left">
+                <div class="container">
+                  <div class="wrap-caption left">
+                    <h2 class="h1 mega-title slideshow__title">Outfit of Today</h2>
+                    <span class="mega-subtitle slideshow__subtitle">Lookbook ss 2018</span>
+                    <span class="btn">View Catelog</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-              <div class="inner center">
-                <a href="#">
-                  <img data-src="{% static 'assets/images/collection/modern3.jpg' %}" src="{% static 'assets/images/collection/modern3.jpg' %}" alt="Tops" title="Tops" class="blur-up lazyload" />
-                  <span class="ttl">Tops</span>
-                </a>
-              </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
-              <div class="inner center">
-                <a href="#">
-                  <img data-src="{% static 'assets/images/collection/modern4.jpg' %}" src="{% static 'assets/images/collection/modern4.jpg' %}" alt="Jeans" title="Jeans" class="blur-up lazyload" />
-                  <span class="ttl">Jeans</span>
-                </a>
-              </div>
-              <div class="inner center">
-                <a href="#">
-                  <img data-src="{% static 'assets/images/collection/modern5.jpg' %}" src="{% static 'assets/images/collection/modern5.jpg' %}" alt="Shoes" title="Shoes" class="blur-up lazyload" />
-                  <span class="ttl">Shoes</span>
-                </a>
+          </div>
+        </div>
+        <div class="slide slideshow--medium">
+          <div class="blur-up lazyload">
+            <img class="blur-up lazyload" data-src="{% static 'assets/images/slideshow-banners/home12-category-banner2.jpg' %}" src="{% static 'assets/images/slideshow-banners/home12-category-banner2.jpg' %}" alt="Accessories" title="Accessories" />
+            <div class="slideshow__text-wrap slideshow__overlay classic middle">
+              <div class="slideshow__text-content classic left">
+                <div class="container">
+                  <div class="wrap-caption left">
+                    <h2 class="h1 mega-title slideshow__title">Accessories</h2>
+                    <span class="mega-subtitle slideshow__subtitle">New Collection A-W ss18</span>
+                    <span class="btn">Shop now</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- End Image Banners -->
-
+    <!-- End Home slider -->
   </div>
   <!-- End Body Content -->
 
@@ -69,14 +50,13 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-          
           <div class="tabs-listing">
             <div class="tab_container">
               <div class="section-header text-center">
                 <h2 class="h2">New Arrivals</h2>
                 <p>Browse the huge variety of our products</p>
               </div>
-              <br>
+              <br />
               <div id="tab2" class="tab_content grid-products">
                 <div class="productSlider">
                   {% for product in products %}
@@ -140,12 +120,12 @@
                     {% endif %}
                   {% endfor %}
                 </div>
-                <hr>
+                <hr />
                 <div class="section-header text-center">
                   <h2 class="h2">HUGE DISCOUNTS</h2>
                   <p>See what we have on our sales section</p>
                 </div>
-                <br>            
+                <br />
                 <div class="productSlider">
                   {% for product in products %}
                     {% if product.price != product.old_price %}
@@ -211,9 +191,8 @@
                     {% endif %}
                   {% endfor %}
                 </div>
-                <hr>
+                <hr />
               </div>
-              
             </div>
           </div>
         </div>
@@ -253,5 +232,4 @@
     </div>
   </div>
   <!-- End Store Feature -->
-
 {% endblock %}
