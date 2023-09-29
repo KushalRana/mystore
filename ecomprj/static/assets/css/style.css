@@ -591,7 +591,7 @@ th {
 }
 
 .grid {
-  *zoom: 1;
+  zoom: 1;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -681,33 +681,6 @@ th {
 .btn--link:focus {
   opacity: 0.8;
   text-decoration: none;
-}
-
-/*======================================================================
-  7. Input Placeholder
-========================================================================*/
-input:-moz-placeholder,
-textarea:-moz-placeholder {
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 /*======================================================================
@@ -4258,7 +4231,7 @@ table {
 }
 
 #shopify-product-reviews {
-  *zoom: 1;
+  zoom: 1;
   display: block;
   clear: both;
   overflow: hidden;
@@ -4304,7 +4277,7 @@ table {
 .spr-form-review-rating,
 .spr-form-review-title,
 .spr-form-review-body {
-  *zoom: 1;
+  zoom: 1;
   margin: 0 0 15px 0;
 }
 
@@ -4359,7 +4332,7 @@ table {
 }
 
 .spr-review-content {
-  *zoom: 1;
+  zoom: 1;
   margin: 0 0 24px 0;
 }
 
@@ -5719,7 +5692,7 @@ input.checkbox {
 }
 
 .home6-modern .btn {
-  background-color: #7ad4ef;
+  background-color: #333;
 }
 
 .home6-modern .footer-5 .site-footer {
