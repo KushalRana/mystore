@@ -36,7 +36,7 @@
       </div>
       <!-- End Search Form Drawer -->
       <!-- Top Header -->
-      <div class="top-header">
+      <div class="top-header" style="background-color: #7ad4ef;">
         <div class="container-fluid">
           <div class="row">
             <div class="col-10 col-sm-8 col-md-5 col-lg-4">
@@ -770,10 +770,13 @@
               </div>
             </div>
             <!-- End Footer Links -->
-            <hr />
             <div class="footer-bottom">
               <div class="row">
                 <!-- Footer Copyright -->
+                <div class="section-header text-center">
+                  <h2 class="h2">HUGE DISCOUNTS</h2>
+                  <p>See what we have on our sales section</p>
+                </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left">
                   <ul class="payment-icons list--inline">
                     <li>
@@ -794,6 +797,7 @@
         </div>
       </footer>
       <!-- End Footer -->
+
       <!-- Scoll Top -->
       <span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
       <!-- End Scoll Top -->
@@ -809,43 +813,6 @@
       <script src="{% static 'assets/js/popper.min.js' %}"></script>
       <script src="{% static 'assets/js/lazysizes.js' %}"></script>
       <script src="{% static 'assets/js/main.js' %}"></script>
-      <!-- For Newsletter Popup -->
-      <script>
-        jQuery(document).ready(function () {
-          jQuery('.closepopup').on('click', function () {
-            jQuery('#popup-container').fadeOut()
-            jQuery('#modalOverly').fadeOut()
-          })
-        
-          var visits = jQuery.cookie('visits') || 0
-          visits++
-          jQuery.cookie('visits', visits, { expires: 1, path: '/' })
-          console.debug(jQuery.cookie('visits'))
-          if (jQuery.cookie('visits') > 1) {
-            jQuery('#modalOverly').hide()
-            jQuery('#popup-container').hide()
-          } else {
-            var pageHeight = jQuery(document).height()
-            jQuery('<div id="modalOverly"></div>').insertBefore('body')
-            jQuery('#modalOverly').css('height', pageHeight)
-            jQuery('#popup-container').show()
-          }
-          if (jQuery.cookie('noShowWelcome')) {
-            jQuery('#popup-container').hide()
-            jQuery('#active-popup').hide()
-          }
-        })
-        
-        jQuery(document).mouseup(function (e) {
-          var container = jQuery('#popup-container')
-          if (!container.is(e.target) && container.has(e.target).length === 0) {
-            container.fadeOut()
-            jQuery('#modalOverly').fadeIn(200)
-            jQuery('#modalOverly').hide()
-          }
-        })
-      </script>
-      <!-- End For Newsletter Popup -->
     </div>
   </body>
 
