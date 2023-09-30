@@ -37,20 +37,18 @@
       <!-- End Search Form Drawer -->
 
       <!-- Header -->
-      <div class="top-header" style="background-color: #7ad4ef;">
+      <div class="top-header" style="background-color: #333;">
         <div class="container-fluid">
           <div class="row">
             <div class="col-10 col-sm-8 col-md-5 col-lg-4">
               <p class="phone-no">
-                <i class="anm anm-phone-s"></i> +440 0(111) 044 833
+                <i class="anm anm-phone-s"></i>Customer service: +440 0(111) 044 833
               </p>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
-              <div class="text-center">
-                <p class="top-header_middle-text">KUSHAL STORE</p>
-              </div>
+            <div class="col-sm-4 col-md-4 col-lg-8 d-none d-lg-none d-md-block d-lg-block">
+              <div class="text-center"></div>
             </div>
-            <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
+            <div class="col-2 col-sm-4 col-md-3 col-lg-8 text-right">
               <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
               <ul class="customer-links list-inline">
                 {% if request.user.is_authenticated %}
@@ -99,11 +97,10 @@
                     <a href="{% url 'core:index' %}">Home <i class="anm anm-angle-down-l"></i></a>
                   </li>
                   <li class="lvl1 parent megamenu">
-                    <a href="#">Shop <i class="anm anm-angle-down-l"></i></a>
+                    <a href="{% url 'core:category-list' %}">Shop <i class="anm anm-angle-down-l"></i></a>
                   </li>
                   <li class="lvl1 parent megamenu">
                     <a href="#">Product <i class="anm anm-angle-down-l"></i></a>
-                    <div class="megamenu style2"></div>
                   </li>
                   <li class="lvl1 parent dropdown">
                     <a href="#">Pages <i class="anm anm-angle-down-l"></i></a>
@@ -247,7 +244,7 @@
       <!-- Footer -->
       <footer id="footer">
         <div class="site-footer">
-          <div class="container">
+          <div class="container" style="color: #333;">
             <!-- Footer Links -->
             <div class="footer-top">
               <div class="row">
