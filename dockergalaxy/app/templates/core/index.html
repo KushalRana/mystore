@@ -62,7 +62,7 @@
               <div id="tab2" class="tab_content grid-products">
                 <div class="productSlider">
                   {% for product in products %}
-                    {% if product.price == product.old_price %}
+                    {% if product.price == product.old_price and product.get_stock > 0 %}
                       <div class="col-12 item">
                         <!-- start product image -->
                         <div class="product-image">
@@ -133,7 +133,7 @@
                 <br />
                 <div class="productSlider">
                   {% for product in products %}
-                    {% if product.price != product.old_price %}
+                    {% if product.price != product.old_price and product.get_stock > 0  %}
                       <div class="col-12 item">
                         <!-- start product image -->
                         <div class="product-image">

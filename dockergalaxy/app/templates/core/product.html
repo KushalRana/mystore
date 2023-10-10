@@ -35,15 +35,11 @@
                             <div class="widget-title"><h2>Size</h2></div>
                             <div class="filter-color swacth-list">
                             	<ul>
-                                    <li><span class="swacth-btn checked">X</span></li>
-                                    <li><span class="swacth-btn">XL</span></li>
-                                    <li><span class="swacth-btn">XLL</span></li>
+                                    <li><span class="swacth-btn">S</span></li>
                                     <li><span class="swacth-btn">M</span></li>
                                     <li><span class="swacth-btn">L</span></li>
-                                    <li><span class="swacth-btn">S</span></li>
-                                    <li><span class="swacth-btn">XXXL</span></li>
+                                    <li><span class="swacth-btn">XL</span></li>
                                     <li><span class="swacth-btn">XXL</span></li>
-                                    <li><span class="swacth-btn">XS</span></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -66,6 +62,7 @@
                         <div class="grid-products grid--view-items">
                             <div class="row">
                                 {% for product in products %}
+                                {% if product.get_stock > 0  %}
                                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 grid-view-item style2 item">
                                 	<div class="grid-view_image">
                                         <!-- start product image -->
@@ -110,6 +107,7 @@
                                         <!-- End product details -->
                                     </div>
                                 </div>
+                                {% endif %}
                                 {% endfor %}
                             </div>
                         </div>

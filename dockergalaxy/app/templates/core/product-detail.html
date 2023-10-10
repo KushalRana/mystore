@@ -16,7 +16,7 @@
               <div class="product-details-img product-single__photos bottom">
                 <div class="zoompro-wrap product-zoom-right pl-20">
                   <div class="zoompro-span">
-                    <img class="blur-up lazyload zoompro" data-zoom-image="assets/images/product-detail-page/camelia-reversible-big1.jpg" alt="" src="{% static 'assets/images/product-detail-page/camelia-reversible-big1.jpg' %}" />
+                    <img class="blur-up lazyload zoompro" data-zoom-image="{{ product.image.url }}" alt="" src="{{ product.image.url }}" />
                   </div>
                   <div class="product-labels">
                     <span class="lbl on-sale">Sale</span><span class="lbl pr-label1">new</span>
@@ -24,81 +24,60 @@
                 </div>
                 <div class="product-thumb product-thumb-1">
                   <div id="gallery" class="product-dec-slider-1 product-tab-left">
-                    <a data-image="assets/images/product-detail-page/camelia-reversible-big1.jpg" data-zoom-image="assets/images/product-detail-page/camelia-reversible-big1.jpg" class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{% static 'assets/images/product-detail-page/camelia-reversible0.jpg' %}" alt="" /></a>
-                    <a data-image="assets/images/product-detail-page/camelia-reversible-big2.jpg" data-zoom-image="assets/images/product-detail-page/camelia-reversible-big2.jpg" class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{% static 'assets/images/product-detail-page/camelia-reversible.jpg' %}" alt="" /></a>
-                    <a data-image="assets/images/product-detail-page/camelia-reversible-big3.jpg" data-zoom-image="assets/images/product-detail-page/camelia-reversible-big3.jpg" class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{% static 'assets/images/product-detail-page/camelia-reversible6.jpg' %}" alt="" /></a>
-                    <a data-image="assets/images/product-detail-page/camelia-reversible7-big.jpg" data-zoom-image="assets/images/product-detail-page/camelia-reversible7-big.jpg" class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{% static 'assets/images/product-detail-page/camelia-reversible7.jpg' %}" alt="" /></a>
-                    <a data-image="assets/images/product-detail-page/camelia-reversible-big4.jpg" data-zoom-image="assets/images/product-detail-page/camelia-reversible-big4.jpg" class="slick-slide slick-cloned" data-slick-index="0" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{% static 'assets/images/product-detail-page/camelia-reversible8.jpg' %}" alt="" /></a>
-                    <a data-image="assets/images/product-detail-page/camelia-reversible-big5.jpg" data-zoom-image="assets/images/product-detail-page/camelia-reversible-big5.jpg" class="slick-slide slick-cloned" data-slick-index="1" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{% static 'assets/images/product-detail-page/camelia-reversible9.jpg' %}" alt="" /></a>
-                    <a data-image="assets/images/product-detail-page/camelia-reversible-big6.jpg" data-zoom-image="assets/images/product-detail-page/camelia-reversible-big6.jpg" class="slick-slide slick-cloned" data-slick-index="2" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{% static 'assets/images/product-detail-page/camelia-reversible1.jpg' %}" alt="" /></a>
-                    <a data-image="assets/images/product-detail-page/camelia-reversible-big7.jpg" data-zoom-image="assets/images/product-detail-page/camelia-reversible-big7.jpg" class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{% static 'assets/images/product-detail-page/camelia-reversible2.jpg' %}" alt="" /></a>
-                    <a data-image="assets/images/product-detail-page/camelia-reversible-big8.jpg" data-zoom-image="assets/images/product-detail-page/camelia-reversible-big8.jpg" class="slick-slide slick-cloned" data-slick-index="4" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{% static 'assets/images/product-detail-page/camelia-reversible3.jpg' %}" alt="" /></a>
-                    <a data-image="assets/images/product-detail-page/camelia-reversible-big9.jpg" data-zoom-image="assets/images/product-detail-page/camelia-reversible-big9.jpg" class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{% static 'assets/images/product-detail-page/camelia-reversible4.jpg' %}" alt="" /></a>
-                    <a data-image="assets/images/product-detail-page/camelia-reversible-big10.jpg" data-zoom-image="assets/images/product-detail-page/camelia-reversible-big10.jpg" class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{% static 'assets/images/product-detail-page/camelia-reversible5.jpg' %}" alt="" /></a>
+                    <a data-image="{{ product.image.url }}" data-zoom-image="{{ product.image.url }}" class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{{ product.image.url }}" alt="" /></a> 
+                    {% for img in product_images %}
+                    <a data-image="{{ img.images.url }}" data-zoom-image="{{ img.images.url }}" class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1"><img class="blur-up lazyload" src="{{ img.images.url }}" alt="" /></a>  
+                    {% endfor %}
                   </div>
-                </div>
-                <div class="lightboximages">
-                  <a href="assets/images/product-detail-page/camelia-reversible-big1.jpg" data-size="1462x2048"></a>
-                  <a href="assets/images/product-detail-page/camelia-reversible-big2.jpg" data-size="1462x2048"></a>
-                  <a href="assets/images/product-detail-page/camelia-reversible-big3.jpg" data-size="1462x2048"></a>
-                  <a href="assets/images/product-detail-page/camelia-reversible7-big.jpg" data-size="1462x2048"></a>
-                  <a href="assets/images/product-detail-page/camelia-reversible-big4.jpg" data-size="1462x2048"></a>
-                  <a href="assets/images/product-detail-page/camelia-reversible-big5.jpg" data-size="1462x2048"></a>
-                  <a href="assets/images/product-detail-page/camelia-reversible-big6.jpg" data-size="731x1024"></a>
-                  <a href="assets/images/product-detail-page/camelia-reversible-big7.jpg" data-size="731x1024"></a>
-                  <a href="assets/images/product-detail-page/camelia-reversible-big8.jpg" data-size="731x1024"></a>
-                  <a href="assets/images/product-detail-page/camelia-reversible-big9.jpg" data-size="731x1024"></a>
-                  <a href="assets/images/product-detail-page/camelia-reversible-big10.jpg" data-size="731x1024"></a>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
               <div class="product-single__meta">
-                <h1 class="product-single__title">Product Layout Style3</h1>
+                <h1 class="product-single__title">{{ product.title }}</h1>
                 <div class="product-nav clearfix">
                   <a href="#" class="next" title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 </div>
                 <div class="prInfoRow">
                   <div class="product-stock">
-                    <span class="instock">In Stock</span> <span class="outstock hide">Unavailable</span>
-                  </div>
-                  <div class="product-sku">
-                    SKU: <span class="variant-sku">19115-rdxs</span>
+                    {% if product.get_stock > 0 %}
+                    <span class="instock">In Stock</span> 
+                    {% else %}
+                    <span class="outstock hide">Unavailable</span>
+                    {% endif %}
                   </div>
                   <div class="product-review">
                     <a class="reviewLink" href="#tab2"><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><span class="spr-badge-caption">6 reviews</span></a>
                   </div>
                 </div>
                 <p class="product-single__price product-single__price-product-template">
+                  {% if product.old_price != product.price %}
                   <span class="visually-hidden">Regular price</span>
-                  <s id="ComparePrice-product-template"><span class="money">$900.00</span></s>
-                  <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single"><span id="ProductPrice-product-template"><span class="money">$788.00</span></span></span>
+                  <s id="ComparePrice-product-template"><span class="money">{{ product.old_price }}</span></s>
+                  <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single"><span id="ProductPrice-product-template"><span class="money">{{ product.price }}</span></span></span>
                   <span class="discount-badge">
                     <span class="devider">|</span>&nbsp;
                     <span>You Save</span>
-                    <span id="SaveAmount-product-template" class="product-single__save-amount"><span class="money">$100.00</span></span>
-                    <span class="off">(<span>16</span>%)</span>
+                    <span id="SaveAmount-product-template" class="product-single__save-amount"><span class="money">{{ product.get_price|floatformat:0 }}</span></span>
+                    <span class="off">(<span>{{ product.get_percentage|floatformat:0 }}</span>%)</span>
+                  {% else %}
+                  <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single"><span id="ProductPrice-product-template"><span class="money">{{ product.price }}</span></span></span>
+                  {% endif %}
                   </span>
                 </p>
                 <div class="product-single__description rte">
                   <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                    <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
-                    <li>Neque porro quisquam est qui dolorem ipsum quia dolor</li>
-                    <li>Lorem Ipsum is not simply random text.</li>
+                    <li>{{ product.description }}</li>
                   </ul>
                 </div>
                 <div id="quantity_message">
-                  Hurry! Only <span class="items">4</span> left in stock.
+                  <span class="items">{{ product.get_stock }}</span> left in stock.
                 </div>
                 <form method="post" action="http://annimexweb.com/cart/add" id="product_form_10508262282" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
                   
                   <div class="swatch clearfix swatch-1 option2" data-option-index="1">
                     <div class="product-form__item">
-                      <label class="header">Size: <span class="slVariant">XS</span></label>
-                      <div data-value="XS" class="swatch-element xs available">
-                        <input class="swatchInput" id="swatch-1-xs" type="radio" name="option-1" value="XS" /><label class="swatchLbl small flat" for="swatch-1-xs" title="XS">XS</label>
-                      </div>
+                      <label class="header">Sizes: <span class="slVariant"></span></label>
                       <div data-value="S" class="swatch-element s available">
                         <input class="swatchInput" id="swatch-1-s" type="radio" name="option-1" value="S" /><label class="swatchLbl small flat" for="swatch-1-s" title="S">S</label>
                       </div>
@@ -110,6 +89,9 @@
                       </div>
                       <div data-value="XL" class="swatch-element xl available">
                         <input class="swatchInput" id="swatch-1-xl" type="radio" name="option-1" value="XL" /><label class="swatchLbl small flat" for="swatch-1-xl" title="XL">XL</label>
+                      </div>
+                      <div data-value="XXL" class="swatch-element xs available">
+                        <input class="swatchInput" id="swatch-1-xxl" type="radio" name="option-1" value="XXL" /><label class="swatchLbl small flat" for="swatch-1-xxl" title="XXL">XXL</label>
                       </div>
                     </div>
                   </div>
@@ -139,24 +121,18 @@
                       <a class="wishlist add-to-wishlist" href="#" title="Add to Wishlist"><i class="icon anm anm-heart-l" aria-hidden="true"></i> <span>Add to Wishlist</span></a>
                     </div>
                   </div>
-                  <div class="display-table-cell text-right">
-                    <div class="social-sharing">
-                      <a target="_blank" href="#" class="btn btn--small btn--secondary btn--share share-facebook" title="Share on Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">Share</span></a>
-                      <a target="_blank" href="#" class="btn btn--small btn--secondary btn--share share-twitter" title="Tweet on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">Tweet</span></a>
-                      <a href="#" title="Share on google+" class="btn btn--small btn--secondary btn--share"><i class="fa fa-google-plus" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">Google+</span></a>
-                      <a target="_blank" href="#" class="btn btn--small btn--secondary btn--share share-pinterest" title="Pin on Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">Pin it</span></a>
-                      <a href="#" class="btn btn--small btn--secondary btn--share share-pinterest" title="Share by Email" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">Email</span></a>
-                    </div>
-                  </div>
                 </div>
                 <div class="product-info">
                   <p class="product-type">
-                    <span class="lbl">Product Type:</span> <a href="http://annimexweb.com/collections/types?q=Women%27s" title="Women's">Women's</a>
+                    <span class="lbl">Product Category:</span> {{ product.category }}
+                    <br>
+                    <span class="lbl">Product Type:</span> {{ product.subcategory }}
                   </p>
                   
                 </div>
               </div>
             </div>
+            <hr>
 
             <!-- Related Product -->
             <div class="related-product grid-products">
@@ -218,81 +194,7 @@
               </div>
             </div>
             <!-- End Recently Viewed Product -->
-            <!-- Product Tabs -->
-            <div class="tabs-listing">
-              <div class="tab-container">
-                <div id="tab2" class="tab-content">
-                  <div id="shopify-product-reviews">
-                    <div class="spr-container">
-                      <div class="spr-header clearfix">
-                        <div class="spr-summary">
-                          <span class="product-review"><a class="reviewLink"><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i></a><span class="spr-summary-actions-togglereviews">Based on 6 reviews456</span></span>
-                          <span class="spr-summary-actions"><a href="#" class="spr-summary-actions-newreview btn">Write a review</a></span>
-                        </div>
-                      </div>
-                      <div class="spr-content">
-                        <div class="spr-form clearfix">
-                          <form method="post" action="#" id="new-review-form" class="new-review-form">
-                            <h3 class="spr-form-title">Write a review</h3>
-                            <fieldset class="spr-form-contact">
-                              <div class="spr-form-contact-name">
-                                <label class="spr-form-label" for="review_author_10508262282">Name</label>
-                                <input class="spr-form-input spr-form-input-text" id="review_author_10508262282" type="text" name="review[author]" value="" placeholder="Enter your name" />
-                              </div>
-                              <div class="spr-form-contact-email">
-                                <label class="spr-form-label" for="review_email_10508262282">Email</label>
-                                <input class="spr-form-input spr-form-input-email" id="review_email_10508262282" type="email" name="review[email]" value="" placeholder="john.smith@example.com" />
-                              </div>
-                            </fieldset>
-                            <fieldset class="spr-form-review">
-                              <div class="spr-form-review-rating">
-                                <label class="spr-form-label">Rating</label>
-                                <div class="spr-form-input spr-starrating">
-                                  <div class="product-review">
-                                    <a class="reviewLink" href="#"><i class="fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i></a>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="spr-form-review-title">
-                                <label class="spr-form-label" for="review_title_10508262282">Review Title</label>
-                                <input class="spr-form-input spr-form-input-text" id="review_title_10508262282" type="text" name="review[title]" value="" placeholder="Give your review a title" />
-                              </div>
-
-                              <div class="spr-form-review-body">
-                                <label class="spr-form-label" for="review_body_10508262282">Body of Review <span class="spr-form-review-body-charactersremaining">(1500)</span></label>
-                                <div class="spr-form-input">
-                                  <textarea class="spr-form-input spr-form-input-textarea" id="review_body_10508262282" data-product-id="10508262282" name="review[body]" rows="10" placeholder="Write your comments here"></textarea>
-                                </div>
-                              </div>
-                            </fieldset>
-                            <fieldset class="spr-form-actions">
-                              <input type="submit" class="spr-button spr-button-primary button button-primary btn btn-primary" value="Submit Review" />
-                            </fieldset>
-                          </form>
-                        </div>
-                        <div class="spr-reviews">
-                          <div class="spr-review">
-                            <div class="spr-review-header">
-                              <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i></span></span>
-                              <h3 class="spr-review-header-title">Lorem ipsum dolor sit amet</h3>
-                              <span class="spr-review-header-byline"><strong>dsacc</strong> on <strong>Apr 09, 2019</strong></span>
-                            </div>
-                            <div class="spr-review-content">
-                              <p class="spr-review-content-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End-product-single -->
-        <!-- Product Sidebar -->
+            <!-- Product Sidebar -->
         <div class="prSidebar sidebar-product">
           <div class="col-lg-12 col-md-12 col-sm-12 col-12">
             

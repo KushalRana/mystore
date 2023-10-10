@@ -126,10 +126,7 @@ class Product(models.Model):
 
     product_status = models.CharField(
         choices=STATUS, max_length=10, default="in_review")
-
     status = models.BooleanField(default=True)
-    # in_stock = models.BooleanField(default=True)
-
     featured = models.BooleanField(default=False)
     digital = models.BooleanField(default=False)
 
@@ -150,6 +147,10 @@ class Product(models.Model):
     def get_percentage(self):
         new_price = (100 - (self.price / self.old_price) * 100)
         return new_price
+
+    def get_price(self):
+        discount_price = self.old_price - self.price
+        return discount_price
 
     def get_stock(self):
         total_stock = self.s_stock + self.m_stock + self.l_stock + self.xl_stock + self.xxl_stock
