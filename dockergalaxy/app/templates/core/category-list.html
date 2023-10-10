@@ -1,0 +1,54 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!--Body Content-->
+<div id="page-content">
+  <div class="container-fluid">
+      <div class="row">
+          <!--Main Content-->
+          <div class="col-12 col-sm-12 col-md-9 col-lg-10 main-col">
+              <div class="productList">
+                  <!--Toolbar-->
+                  <!--End Toolbar-->
+                  <div class="grid-products grid--view-items">
+                      <div class="row">
+                        {% for category in categories %}
+                          <div class="col-12 col-sm-12 col-md-6 col-lg-4 grid-view-item style2 item">
+                              <div class="grid-view_image">
+                                  <!-- start product image -->
+                                  <a href="{% url 'core:category-subcategory-list' category.title %}" class="grid-view-item__link">
+                                      <!-- image -->
+                                      <img class="grid-view-item__image primary blur-up lazyload"
+                                          data-src="{{ category.image.url }}"
+                                          src="{{ category.image.url }}" alt="image"
+                                          title="product">
+                                      <!-- End image -->
+                                      <!-- Hover image -->
+                                      <img class="grid-view-item__image hover blur-up lazyload"
+                                          data-src="{{ category.image.url }}"
+                                          src="{{ category.image.url }}" alt="image"
+                                          title="product">
+                                      <!-- End hover image -->
+                                      <div class="product-name">
+                                        <br>
+                                        <h3>
+                                            <strong>{{ category.title }}</strong>
+                                        </h3>
+                                        <hr>
+                                       </div>
+                                  </a>
+                                  <!-- end product image -->
+                              </div>
+                        </div>
+                        {% endfor %}
+                  </div>
+              </div>
+              <!--End Main Content-->
+          </div>
+      </div>
+  </div>
+  <!--End Body Content-->
+
+{% endblock %}

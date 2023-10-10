@@ -1,0 +1,129 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+        <div class="container-fluid">
+        	<div class="row">
+            	<!--Sidebar-->
+            	<div class="col-12 col-sm-12 col-md-3 col-lg-2 sidebar filterbar">
+                	<div class="closeFilter d-block d-md-none d-lg-none"><i class="icon icon anm anm-times-l"></i></div>
+                	<div class="sidebar_tags">
+                        <!--Price Filter-->
+                        <div class="sidebar_widget filterBox filter-widget">
+                            <div class="widget-title">
+                            	<h2>Price</h2>
+                            </div>
+                            <form action="#" method="post" class="price-filter">
+                                <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                	<div class="ui-slider-range ui-widget-header ui-corner-all"></div>
+                                    <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
+                                    <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="no-margin"><input id="amount" type="text"></p>
+                                    </div>
+                                    <div class="col-6 text-right margin-25px-top">
+                                        <button class="btn btn-secondary btn--small">filter</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--End Price Filter-->
+                        <!--Size Swatches-->
+                        <div class="sidebar_widget filterBox filter-widget size-swacthes">
+                            <div class="widget-title"><h2>Size</h2></div>
+                            <div class="filter-color swacth-list">
+                            	<ul>
+                                    <li><span class="swacth-btn">S</span></li>
+                                    <li><span class="swacth-btn">M</span></li>
+                                    <li><span class="swacth-btn">L</span></li>
+                                    <li><span class="swacth-btn">XL</span></li>
+                                    <li><span class="swacth-btn">XXL</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--End Size Swatches-->
+                    </div>
+                </div>
+                <!--End Sidebar-->
+                <!--Toolbar-->
+                <button type="button" class="btn btn-filter d-block d-md-none d-lg-none"> Product Filters</button>
+                <div class="toolbar">
+                    <div class="filters-toolbar-wrapper">
+                        <div class="row">
+                        </div>
+                    </div>
+                </div>
+                <!--End Toolbar-->
+                <!--Main Content-->
+                <div class="col-12 col-sm-12 col-md-9 col-lg-10 main-col">
+                	<div class="productList">
+                        <div class="grid-products grid--view-items">
+                            <div class="row">
+                                {% for product in products %}
+                                <div class="col-6 col-sm-6 col-md-4 col-lg-3 grid-view-item style2 item">
+                                	<div class="grid-view_image">
+                                        <!-- start product image -->
+                                        <a href="{% url 'core:product-detail' product.pid %}" class="grid-view-item__link">
+                                            <!-- image -->
+                                            <img class="grid-view-item__image primary blur-up lazyload" data-src="{{ product.image.url }}" src="{{ product.image.url }}" alt="image" title="product">
+                                            <!-- End image -->
+                                            <!-- Hover image -->
+                                            <img class="grid-view-item__image hover blur-up lazyload" data-src="{{ product.image.url }}" src="{{ product.image.url }}" alt="image" title="product">
+                                            <!-- End hover image -->
+                                        
+                                        {% if product.price == product.old_price %}
+                                        <div class="product-labels rectangular">
+                                            <span class="lbl pr-label1">HOT</span>
+                                          </div>
+                                        {% else %}
+                                        <div class="product-labels rectangular">
+                                            <span class="lbl on-sale">{{ product.get_percentage|floatformat:0 }}%</span> <span class="lbl pr-label1">SALE</span>
+                                          </div>
+                                        {% endif %}
+                                        </a>                                        
+                                        <!--start product details -->
+                                        <div class="product-details hoverDetails text-center mobile">
+                                            <!-- product name -->
+                                            <div class="product-name">
+                                                <a href="{% url 'core:product-detail' product.pid %}">{{ product.title }}</a>
+                                            </div>
+                                            <!-- End product name -->
+                                            <!-- product price -->
+                                            <div class="product-price">
+                                                <span class="price">{{ product.price }}</span>
+                                            </div>
+                                            <!-- End product price -->
+                                            
+                                            <!-- product button -->
+                                            <div class="button-set">
+                                                
+                                                <!-- Start product button -->
+                                                <form action="#" method="post">
+                                                    <button class="btn btn-primary cartIcon btn-addto-cart" type="button"><i class="icon anm anm-bag-l"></i></button>
+                                                </form>
+                                                <div class="wishlist-btn">
+                                                    <a class="wishlist add-to-wishlist" href="#" title="Add to Wishlist">
+                                                        <i class="icon anm anm-heart-l"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- end product button -->
+                                        </div>
+                                        <!-- End product details -->
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Main Content-->
+            </div>
+        </div>
+    </div>
+    <!--End Body Content-->
+    
+ {% endblock %}
